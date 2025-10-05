@@ -32,11 +32,16 @@
             </div>
         </div>
     </main>
-    <footer><p>1 Lölő = 1422 milliárd forint</p></footer>
+    <footer></footer>
     <script>
         let isMoneyToLolo = true;
 
-        const conversionRate = 1422000000000;
+        const footer = document.querySelector("footer")
+
+        const conversionRate = 1_749_100_000_000;
+        const p = document.createElement("p")
+        p.innerText = `1 Lőlő = ${(conversionRate / 1_000_000_000).toFixed(1)} milliárd forint`
+        footer.append(p)
 
         document.getElementById("money").addEventListener("input", function() {
             const inputValue = document.getElementById("money").value.replace(/,/g, ".");
