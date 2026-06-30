@@ -8,8 +8,11 @@ body {
     text-align: center;
 }
 
-ol {
-    margin: 0;
+li {
+    width: 100%;
+}
+
+ol, ul {
     padding: 0;
     text-align: left;
     width: 60%;
@@ -18,10 +21,28 @@ ol {
     list-style-type: none;
 }
   
-li::before {
-  content: "[" counter(item) "] ";
-  font-family: 'Consolas';
-  counter-increment: item;
+ol > li::before {
+    content: "[" counter(item) "] ";
+    font-family: 'Consolas';
+    counter-increment: item;
+}
+ul > li::before {
+    content: "• ";
+    font-family: 'Consolas';
+}
+
+li > ul {
+    margin-left: 20px;
+    width: 100%;
+}
+
+li > ul > li::before {
+    content: "◦ ";
+    font-family: 'Consolas';
+}
+
+li > ul + ul {
+    margin-top: 20px;
 }
 
 a:visited {
